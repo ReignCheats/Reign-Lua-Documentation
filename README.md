@@ -35,10 +35,10 @@ Due to security concerns, certain library functions are disabled.
 
 - **eNotificationType**
   - An enum representing notification states
-    - NOTIFY_DEFAULT
-    - NOTIFY_ERROR
-    - NOTIFY_SUCCESS
-    - NOTIFY_WARNING
+    * NOTIFY_DEFAULT
+    * NOTIFY_ERROR
+    * NOTIFY_SUCCESS
+    * NOTIFY_WARNING
 
 # Filesystem
 ```lua
