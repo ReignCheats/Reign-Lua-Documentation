@@ -3,7 +3,7 @@
 - [Filesystem](#Filesystem)
 - [Memory](#Memory)
 - [Menu](#Menu)
-  
+- [Native Invoker](#Native Invoker)
 # Filesystem
 ```lua
 string filesystem.scripts_dir()
