@@ -13,11 +13,11 @@
   A table with x, y, z properties.
 
 - eNotificationType
-    An enum representing notification states
-        NOTIFY_DEFAULT
-        NOTIFY_ERROR
-        NOTIFY_SUCCESS
-        NOTIFY_WARNING
+  - An enum representing notification states
+    - NOTIFY_DEFAULT
+    - NOTIFY_ERROR
+    - NOTIFY_SUCCESS
+    - NOTIFY_WARNING
 
 # Filesystem
 ```lua
