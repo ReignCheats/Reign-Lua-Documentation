@@ -9,7 +9,7 @@
 - [Native Invoker](#Native-Invoker)
 - [Script](#Script)
 - [Util](#Util)
-- [Resoures](#Resources)
+- [Resources](#Resources)
 
 # Introduction
 First of all, thank you for taking interest in Reign's scripting API. Let's get into some details about the API. Reign uses Pluto as its scripting language of choice. It introduces a bunch fo welcome additions and improvements to Lua which make the language a lot more interesting. You can find more info regarding Pluto [here](https://pluto-lang.org/docs/Introduction). If you're more comfortable with stock Lua, that's not a problem, you don't *need* to use Pluto syntax.
