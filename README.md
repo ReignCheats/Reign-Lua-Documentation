@@ -2,6 +2,8 @@
 # Table of contents
 - [Filesystem](#Filesystem)
 - [Memory](#Memory)
+- [Menu](#Menu)
+  
 # Filesystem
 ```lua
 string filesystem.scripts_dir()
@@ -77,7 +79,34 @@ Writes a 8-bit integer to the givena address.
 # Menu
 
 # Native Invoker
+```lua
+int native_invoker.invoke_int(Hash hash, Any ...args)
 
+
+-- Example
+const hash = 0xD80958FC74E988A6 -- PLAYER_PED_ID
+let player_ped_id = native_invoker.invoke_int(hash);
+```
+Invokes a native and returns its return as type int, ...args is the arguments you supply to the native.
+```lua
+float native_invoker.invoke_float(Hash hash, Any ...args)
+```
+
+```lua
+void native_invoker.invoke_void(Hash hash, Any ...args)
+```
+
+```lua
+bool native_invoker.invoke_bool(Hash hash, Any ...args)
+```
+
+```lua
+Vector3 native_invoker.invoke_vector3(Hash hash, Any ...args)
+```
+
+```lua
+string native_invoker.invoke_string(Hash hash, Any ...args)
+```
 # Script
 
 # Util 
