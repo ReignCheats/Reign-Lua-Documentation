@@ -9,6 +9,7 @@
 - [Native Invoker](#Native-Invoker)
 - [Script](#Script)
 - [Util](#Util)
+- [Resoures](#Resources)
 
 # Introduction
 First of all, thank you for taking interest in Reign's scripting API. Let's get into some details about the API. Reign uses Pluto as its scripting language of choice. It introduces a bunch fo welcome additions and improvements to Lua which make the language a lot more interesting. You can find more info regarding Pluto [here](https://pluto-lang.org/docs/Introduction). If you're more comfortable with stock Lua, that's not a problem, you don't *need* to use Pluto syntax.
@@ -223,3 +224,10 @@ Returns a JOAAT hash, used for a variety of things in GTA, such as entity models
 void util.toast(string title, string body, eNotificationType type = NOTIFY_DEFAULT)
 ```
 Registers a new notification to be displayed.
+
+# Resources
+[Pluto](https://pluto-lang.org/docs/Introduction)
+[Natives](https://gta5.nativedb.dotindustries.dev/natives/)
+[Learning Lua](https://www.youtube.com/watch?v=iMacxZQMPXs)
+[Useful lists](https://forge.plebmasters.de/)
+[Lua Website](https://lua.org/)
