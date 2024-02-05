@@ -100,17 +100,25 @@ int memory.read_byte(userdata address)
 Reads an 8-bit integer at the given address.
 
 ```lua
+string memory.read_string(userdata address)
+```
+
+```lua
 void memory.write_int(userdata address, int value)
 ```
 Writes a 32-bit integer to the givena address.
 ```lua
-void memory.write_float(userdata address)
+void memory.write_float(userdata address, float value)
 ```
 
 ```lua
-void memory.write_byte(userdata address)
+void memory.write_byte(userdata address, int value)
 ```
 Writes a 8-bit integer to the givena address.
+
+```lua
+void memory.write_string(userdata address, string value)
+```
 
 # Menu
 
