@@ -226,8 +226,8 @@ void util.toast(string title, string body, eNotificationType type = NOTIFY_DEFAU
 Registers a new notification to be displayed.
 
 # Resources
-[Pluto](https://pluto-lang.org/docs/Introduction)
-[Natives](https://gta5.nativedb.dotindustries.dev/natives/)
-[Learning Lua](https://www.youtube.com/watch?v=iMacxZQMPXs)
-[Useful lists](https://forge.plebmasters.de/)
-[Lua Website](https://lua.org/)
+- [Pluto](https://pluto-lang.org/docs/Introduction)
+- [Natives](https://gta5.nativedb.dotindustries.dev/natives/)
+- [Learning Lua](https://www.youtube.com/watch?v=iMacxZQMPXs)
+- [Useful lists](https://forge.plebmasters.de/)
+- [Lua Website](https://lua.org/)
