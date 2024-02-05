@@ -1,5 +1,6 @@
 
-
+# Table of contents
+[Filesystem](#Filesystem]
 
 # Filesystem
 ```lua
