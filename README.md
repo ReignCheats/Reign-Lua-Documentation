@@ -1,7 +1,7 @@
 
 # Table of contents
 - [Filesystem](#Filesystem)
-
+- [Memory](#Memory)
 # Filesystem
 ```lua
 string filesystem.scripts_dir()
