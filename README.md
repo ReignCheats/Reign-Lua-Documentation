@@ -1,9 +1,24 @@
 
 # Table of contents
+- [Types](#Types)
 - [Filesystem](#Filesystem)
 - [Memory](#Memory)
 - [Menu](#Menu)
 - [Native Invoker](#Native-Invoker)
+- [Script](#Script)
+- [Util](#Util)
+# Types
+
+- Vector3
+  A table with x, y, z properties.
+
+- eNotificationType
+    An enum representing notification states
+        NOTIFY_DEFAULT
+        NOTIFY_ERROR
+        NOTIFY_SUCCESS
+        NOTIFY_WARNING
+
 # Filesystem
 ```lua
 string filesystem.scripts_dir()
@@ -109,6 +124,82 @@ string native_invoker.invoke_string(Hash hash, Any ...args)
 ```
 # Script
 
+```lua
+void script.create_fiber(string name, function callback)
+
+-- Example
+-- Will draw a white rectangle on tick.
+script.create_fiber("ExampleFiber", function()
+    while(true) do
+        native_invoker.invoke_void(0x3A618A217E5154F0, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255, 0) -- draw_rect
+        util.yield()
+    end
+end)
+```
+
+Registers a new fiber in which natives can be executed, similiar to the fiber your script is operating in. Take note that this fiber is destroyed when it's not in use. To prevent this from happening, run a while loop inside the callback. Remember to use util.yield() when doing so.
+
 # Util 
 
-# Types
+```lua
+int util.current_time_millis()
+```
+Returns the current OS time in milliseconds.
+
+```lua
+void util.yield(int ms = 0)
+```
+Yields the current thread until the next tick, or the specified ms value. Has to be called when using infinite loops.
+
+```lua
+bool util.is_key_pressed(int vk)
+```
+Returns true if the virtual key was pressed. See https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+
+```lua
+int util.stat_get_int(Hash hash)
+```
+Wrapper around STAT_GET_INT, internally retrieves the value from memory and returns it.
+
+```lua
+float util.stat_get_float(Hash hash)
+```
+
+```lua
+bool util.stat_get_bool(Hash hash)
+```
+
+```lua
+bool util.register_file(path)
+
+-- Example
+if(util.register_file(filesystem.scripts_dir() .. "Reign.ytd")) then
+    script.create_fiber("YTD", function()
+        while(true) do
+            native_invoker.invoke_void(0xE7FFAE5EBF23D890, "Reign", "Header", 0.5, 0.5, 0.5, 0.5, 0, 255, 255, 255, 255, 0, 0)
+            util.yield()
+        end
+    end)
+end
+```
+Registers the specified YTD file so that it can be used with natives, such as GRAPHICS::DRAW_SPRITE.
+
+```lua
+string util.get_clipboard_text()
+```
+Returns the string currently allocated in the user's clipboard.
+
+```lua
+void util.set_clipboard_text(string text)
+```
+Sets the string currently allocated in the user's clipboard.
+
+```lua
+int util.joaat(string text)
+```
+Returns a JOAAT hash, used for a variety of things in GTA, such as entity models.
+
+```lua
+void util.toast(string title, string body, eNotificationType type = NOTIFY_DEFAULT)
+```
+Registers a new notification to be displayed.
