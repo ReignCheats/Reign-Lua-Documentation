@@ -241,7 +241,7 @@ Brings up the game's input box, returns whatever the user submitted.
 ```lua
 bool, string util.get_input(string title, int min, int max)
 ```
-Brings up the internal inpput box used by Reign. 
+Brings up the internal input box used by Reign. 
 
 # Resources
 - [Pluto](https://pluto-lang.org/docs/Introduction)
