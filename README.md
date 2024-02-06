@@ -236,7 +236,12 @@ Registers a new notification to be displayed.
 ```lua
 string util.get_keyboard_input(string title, int max_chars = 8, string placeholder = "")
 ```
-Brings up the input box, returns whatever the user submitted.
+Brings up the game's input box, returns whatever the user submitted.
+
+```lua
+bool, string util.get_input(string title, int min, int max)
+```
+Brings up the internal inpput box used by Reign. 
 
 # Resources
 - [Pluto](https://pluto-lang.org/docs/Introduction)
