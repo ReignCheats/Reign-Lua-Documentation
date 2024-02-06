@@ -233,6 +233,11 @@ void util.toast(string title, string body, eNotificationType type = NOTIFY_DEFAU
 ```
 Registers a new notification to be displayed.
 
+``lua
+string util.get_keyboard_input(string title, int max_chars = 8, string placeholder = "")
+```
+Brings up the input box, returns whatever the user submitted.
+
 # Resources
 - [Pluto](https://pluto-lang.org/docs/Introduction)
 - [Natives](https://gta5.nativedb.dotindustries.dev/natives/)
