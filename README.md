@@ -130,21 +130,21 @@ void native_invoker.init(int nativeHash)
 Must be called at the start of every native call.
 
 ```lua
-		void native_invoker.push_arg_pointer(userdata arg)
-		void native_invoker.push_arg_int(int arg)
-		void native_invoker.push_arg_float(float arg)
-		void native_invoker.push_arg_bool(bool arg)
-		void native_invoker.push_arg_string(string arg)
+void native_invoker.push_arg_pointer(userdata arg)
+void native_invoker.push_arg_int(int arg)
+void native_invoker.push_arg_float(float arg)
+void native_invoker.push_arg_bool(bool arg)
+void native_invoker.push_arg_string(string arg)
 ```
 These functions are used to push arguments to the native being called, always called after native_invoker.init.
 
 ```lua
-		int invoke_int()
-		float invoke_float()
-		string invoke_string()
-		bool invoke_bool()
-		void invoke_void()
-		Vector3 invoke_vector3()
+int invoke_int()
+float invoke_float()
+string invoke_string()
+bool invoke_bool()
+void invoke_void()
+Vector3 invoke_vector3()
 
 -- Example
 local function DrawRect(x, y, width, height, r, g, b, a)     
