@@ -232,12 +232,12 @@ end
 Registers the specified YTD file so that it can be used with natives, such as GRAPHICS::DRAW_SPRITE.
 
 ```lua
-string util.get_clipboard_text()
+string util.get_clipboard()
 ```
 Returns the string currently allocated in the user's clipboard.
 
 ```lua
-void util.set_clipboard_text(string text)
+void util.set_clipboard(string text)
 ```
 Sets the string currently allocated in the user's clipboard.
 
