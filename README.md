@@ -167,6 +167,8 @@ while(true) do
 end
 
 ```
+Natives can be manually invoked like the above, or you can get natives.lua from [here](https://github.com/ReignCheats/ReignNatives) and put it in the ReignASI folder, it will be automatically required in Lua scripts, or you can require it manually.
+
 # Script
 
 ```lua
