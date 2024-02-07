@@ -44,7 +44,7 @@ Due to security concerns, certain library functions are disabled.
 ```lua
 string filesystem.scripts_dir()
 ```
-Example return value: C:\Users\User\AppData\Roaming\EquinoxASI\Lua\
+Example return value: C:\Users\User\AppData\Roaming\Reign\Lua\
 
 ```lua
 string filesystem.appdata_dir()
