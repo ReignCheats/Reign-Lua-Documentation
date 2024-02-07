@@ -123,33 +123,49 @@ void memory.write_string(userdata address, string value)
 # Menu
 
 # Native Invoker
-```lua
-int native_invoker.invoke_int(Hash hash, Any ...args)
 
+```lua
+void native_invoker.init(int nativeHash)
+```
+Must be called at the start of every native call.
+
+```lua
+		void native_invoker.push_arg_pointer(userdata arg)
+		void native_invoker.push_arg_int(int arg)
+		void native_invoker.push_arg_float(float arg)
+		void native_invoker.push_arg_bool(bool arg)
+		void native_invoker.push_arg_string(string arg)
+```
+These functions are used to push arguments to the native being called, always called after native_invoker.init.
+
+```lua
+		int invoke_int()
+		float invoke_float()
+		string invoke_string()
+		bool invoke_bool()
+		void invoke_void()
+		Vector3 invoke_vector3()
 
 -- Example
-const hash = 0xD80958FC74E988A6 -- PLAYER_PED_ID
-let player_ped_id = native_invoker.invoke_int(hash);
-```
-Invokes a native and returns its return as type int, ...args is the arguments you supply to the native.
-```lua
-float native_invoker.invoke_float(Hash hash, Any ...args)
-```
+local function DrawRect(x, y, width, height, r, g, b, a)     
+    native_invoker.init(0x3A618A217E5154F0)
+    native_invoker.push_arg_float(x)
+    native_invoker.push_arg_float(y)
+    native_invoker.push_arg_float(width)
+    native_invoker.push_arg_float(height)
+    native_invoker.push_arg_int(r)
+    native_invoker.push_arg_int(g)
+    native_invoker.push_arg_int(b)
+    native_invoker.push_arg_int(a)
+    native_invoker.push_arg_int(0)
+    native_invoker.invoke_void() -- DrawRect doesn't return anything, if it was a native like PLAYER_PED_ID, we would use invoke_int and return it.
+end
 
-```lua
-void native_invoker.invoke_void(Hash hash, Any ...args)
-```
+while(true) do
+  DrawRect(0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255)
+  util.yield()
+end
 
-```lua
-bool native_invoker.invoke_bool(Hash hash, Any ...args)
-```
-
-```lua
-Vector3 native_invoker.invoke_vector3(Hash hash, Any ...args)
-```
-
-```lua
-string native_invoker.invoke_string(Hash hash, Any ...args)
 ```
 # Script
 
@@ -160,7 +176,7 @@ void script.create_fiber(string name, function callback)
 -- Will draw a white rectangle on tick.
 script.create_fiber("ExampleFiber", function()
     while(true) do
-        native_invoker.invoke_void(0x3A618A217E5154F0, 0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255, 0) -- draw_rect
+        Graphics.DrawRect(0.5, 0.5, 0.5, 0.5, 255, 255, 255, 255, 0)
         util.yield()
     end
 end)
@@ -205,7 +221,7 @@ bool util.register_file(path)
 if(util.register_file(filesystem.scripts_dir() .. "Reign.ytd")) then
     script.create_fiber("YTD", function()
         while(true) do
-            native_invoker.invoke_void(0xE7FFAE5EBF23D890, "Reign", "Header", 0.5, 0.5, 0.5, 0.5, 0, 255, 255, 255, 255, 0, 0)
+            Graphics.DrawSprite("Reign", "Header", 0.5, 0.5, 0.5, 0.5, 0, 255, 255, 255, 255, 0, 0)
             util.yield()
         end
     end)
