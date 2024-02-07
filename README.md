@@ -106,7 +106,7 @@ string memory.read_string(userdata address)
 ```lua
 void memory.write_int(userdata address, int value)
 ```
-Writes a 32-bit integer to the givena address.
+Writes a 32-bit integer to the given address.
 ```lua
 void memory.write_float(userdata address, float value)
 ```
