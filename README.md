@@ -280,6 +280,11 @@ end
 ```
 Gets and returns nearby entity handles.
 
+```lua
+int entities.handle_to_pointer(int handle);
+```
+Returns the address of the entity through its handle.
+
 # Resources
 - [Pluto](https://pluto-lang.org/docs/Introduction)
 - [Natives](https://gta5.nativedb.dotindustries.dev/natives/)
