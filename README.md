@@ -269,7 +269,6 @@ Brings up the internal input box used by Reign.
 table<Vehicle> entities.get_all_vehicles();
 table<Ped> entities.get_all_peds();
 table<Object> entities.get_all_objects();
-table<Pickup> entities.get_all_pickups();
 
 -- Example
 const vehicles = entities.get_all_vehicles();
