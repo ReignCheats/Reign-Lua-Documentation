@@ -9,6 +9,7 @@
 - [Native Invoker](#Native-Invoker)
 - [Script](#Script)
 - [Util](#Util)
+- [Entities](#Entities)
 - [Resources](#Resources)
 
 # Introduction
@@ -260,6 +261,24 @@ Brings up the game's input box, returns whatever the user submitted.
 bool, string util.get_input(string title, int min, int max)
 ```
 Brings up the internal input box used by Reign. 
+
+# Entities
+
+```lua
+
+table<Vehicle> entities.get_all_vehicles();
+table<Ped> entities.get_all_peds();
+table<Object> entities.get_all_objects();
+table<Pickup> entities.get_all_pickups();
+
+-- Example
+const vehicles = entities.get_all_vehicles();
+
+for _, vehicle in vehicles do
+    util.toast("Vehicles", tostring(vehicle));
+end
+```
+Gets and returns nearby entity handles.
 
 # Resources
 - [Pluto](https://pluto-lang.org/docs/Introduction)
