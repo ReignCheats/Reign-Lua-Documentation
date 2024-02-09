@@ -123,6 +123,11 @@ void memory.write_string(userdata address, string value)
 
 # Menu
 
+```lua
+void menu.action(int parentId, string name, function callback, ?string tooltip)
+void menu.toggle(int parentId, string name, function callback(bool state), ?string tooltip)
+```
+Registers options within the Reign menu.
 # Native Invoker
 
 ```lua
