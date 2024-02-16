@@ -267,6 +267,12 @@ bool, string util.get_input(string title, int min, int max)
 ```
 Brings up the internal input box used by Reign. 
 
+
+```lua
+void util.play_sound(string path)
+```
+Plays the specified sound.
+
 # Entities
 
 ```lua
